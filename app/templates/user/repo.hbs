@@ -1,0 +1,10 @@
+<div class="repo-header">
+  <h1>
+    {{fa-icon icon="book"}}
+    <span class="user">{{#link-to "user"}}{{model.owner.login}}{{/link-to}}</span>
+    /
+    <span class="repo">{{#link-to "user.repo"}}{{model.name}}{{/link-to}}</span>
+  </h1>
+</div>
+
+{{outlet}}

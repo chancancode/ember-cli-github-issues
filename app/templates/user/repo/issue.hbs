@@ -1,0 +1,15 @@
+<div class="issue-header">
+  <h2>{{model.title}} <span class="number">#{{model.number}}</span></h2>
+  <p class="details">
+    <span class="user">{{#link-to "user" model.user.login}}{{model.user.login}}{{/link-to}}</span>
+    opened this issue {{moment-from-now model.created_at}}
+  </p>
+</div>
+
+<div class="issue-comments">
+  {{issue-comment comment=model}}
+
+  {{#each model.comments as |comment|}}
+    {{issue-comment comment=comment}}
+  {{/each}}
+</div>
