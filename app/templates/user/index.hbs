@@ -1,0 +1,55 @@
+<div class="user-header">
+  <img class="avatar" height="120" width="120" src="{{model.avatar_url}}&amp;s=240">
+  <h1>{{model.name}}</h1>
+
+  <ul class="user-details">
+    {{#if model.company}}
+      <li>
+        {{fa-icon icon="briefcase"}}
+        {{model.company}}
+      </li>
+    {{/if}}
+
+    {{#if model.location}}
+      <li>
+        {{fa-icon icon="globe"}}
+        {{model.location}}
+      </li>
+    {{/if}}
+
+    {{#if model.blog}}
+      <li>
+        {{fa-icon icon="link"}}
+        <a href="{{model.blog}}" target="_blank">{{model.blog}}</a>
+      </li>
+    {{/if}}
+  </ul>
+
+  <ul class="user-tabs">
+    <li class="active">
+      {{fa-icon icon="book"}}
+      Repositories
+      <span class="badge">{{model.public_repos}}</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="user-repos">
+  {{#each model.repos as |repo|}}
+    {{#if repo.has_issues}}
+      <li>
+        <ul class="repo-info">
+          {{#if repo.language}}
+            <li>{{repo.language}}</li>
+          {{/if}}
+          <li>{{fa-icon icon="star"}} {{repo.stargazers_count}}</li>
+          <li>{{fa-icon icon="code-fork"}} {{repo.forks_count}}</li>
+          <li>{{fa-icon icon="bug"}} {{repo.open_issues_count}}</li>
+        </ul>
+        <h3><a href="#TODO">{{repo.name}}</a></h3>
+        <p class="description">{{repo.description}}</p>
+        <p class="updated">Updated {{repo.pushed_at}}</p>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
