@@ -48,7 +48,7 @@
         </ul>
         <h3><a href="#TODO">{{repo.name}}</a></h3>
         <p class="description">{{repo.description}}</p>
-        <p class="updated">Updated {{repo.pushed_at}}</p>
+        <p class="updated">Updated {{moment-from-now repo.pushed_at}}</p>
       </li>
     {{/if}}
   {{/each}}
