@@ -7,6 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('user', { path: '/:username' }, function() {
+    this.route("repo", { path: "/:repo_name" }, function() {
+    });
   });
 });
 
